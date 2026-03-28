@@ -1,0 +1,1 @@
+SELECT "throws" AS "R_throws" FROM "players" WHERE "throws" = "R" ORDER BY "debut";

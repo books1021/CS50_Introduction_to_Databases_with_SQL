@@ -1,0 +1,1 @@
+SELECT "id" FROM episodes WHERE "season" = 1 and "air_date" > "2002";	

@@ -1,0 +1,1 @@
+SELECT "japanese_titlE" AS "富嶽三十六景" FROM "views" WHERE "artist" = "Hokusai" ORDER BY "id";
