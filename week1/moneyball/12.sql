@@ -1,7 +1,7 @@
 --intersect/IINER join method, best 10 hit intersect best 10 RBI
 -- Best 10 Hit query
 SELECT "first_name",
-    "last_name", "dollars per hit"
+    "last_name"
 FROM (
         SELECT "first_name",
             "last_name",
@@ -20,7 +20,7 @@ FROM (
 INTERSECT
 -- best 10 RBI query
 SELECT "first_name",
-    "last_name", "dollars per RBI"
+    "last_name"
 FROM (
         SELECT "first_name",
             "last_name",
@@ -36,7 +36,7 @@ FROM (
             "last_name" ASC
         LIMIT 10
     )
---ORDER BY "last_name" ASC
+ORDER BY "last_name" ASC
 ;
 --  query value of best 10th hit and best 10th RBI
 -- then use it to query names
