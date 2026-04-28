@@ -53,9 +53,17 @@ UPDATE "meteorites_temp"
 SET "mass" = ROUND("mass",2);
 
 UPDATE "meteorites_temp"
-    SET "lat" = NULL
-    WHERE "lat" = ROUND("lat",2);
+    SET "lat" = ROUND("lat",2);
 
 UPDATE "meteorites_temp"
-    SET "long" = NULL
-    WHERE "long" = ROUND("long",2);
+    SET "long" = ROUND("long",2);
+
+--remove all meteorites with nametpye as Relict
+DELETE FROM "meteorites_temp"
+WHERE "nametype" = 'Relict';
+
+INSERT INTO "meteorites" ("name", "class", "mass", "discovery", "year", "lat", "long") 
+SELECT "name", "class", "mass", "discovery", "year", "lat", "long" FROM "meteorites_temp" 
+ORDER BY "year" ASC ,"name" ASC;
+
+DROP TABLE IF EXISTS "meteorites_temp";
